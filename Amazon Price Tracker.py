@@ -47,10 +47,12 @@ def initialise_window():        # Used for notifying the price drop and ok butto
     ok_button.flash()
     root.mainloop()
 
+    
+current_price = getter_price()    
 while True:
-    current_price = getter_price()
     if check_price(current_price):
         initialise_window()
         quit()
     else:
+        current_price = getter_price()
         time.sleep(60*60*24)
