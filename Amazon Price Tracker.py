@@ -30,7 +30,7 @@ def getter_price(): # Function for returning the price of product
     return float(final_price)           # converting to decimal and returning
 
 
-def check_price(current_price): # Function to check whether the price is increased from the current value. Current value is parameter
+def price_drop(current_price): # Function to check whether the price is increased from the current value. Current value is parameter
     new_price = getter_price()
     if new_price < current_price:
         return True                 # Returns True if there is a price drop
@@ -50,7 +50,7 @@ def initialise_window():        # Used for notifying the price drop and ok butto
     
 current_price = getter_price()    
 while True:
-    if check_price(current_price):
+    if price_drop(current_price):
         initialise_window()
         quit()
     else:
